@@ -117,6 +117,7 @@
           </div>
         </div>
       </div>
+      <UserBar></UserBar>
     </div>
     <NodeImage></NodeImage>
     <NodeHyperlink></NodeHyperlink>
@@ -142,6 +143,7 @@ import exampleData from 'simple-mind-map/example/exampleData'
 import { getData } from '../../../api'
 import ToolbarNodeBtnList from './ToolbarNodeBtnList.vue'
 import { throttle } from 'simple-mind-map/src/utils/index'
+import UserBar from './UserBar.vue'
 
 /**
  * @Author: 王林
@@ -159,7 +161,8 @@ export default {
     NodeTag,
     Export,
     Import,
-    ToolbarNodeBtnList
+    ToolbarNodeBtnList,
+    UserBar
   },
   data() {
     return {
@@ -538,7 +541,7 @@ export default {
       }
     }
   }
-  .toolbar {
+  /deep/ .toolbar {
     position: fixed;
     left: 50%;
     transform: translateX(-50%);

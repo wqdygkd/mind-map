@@ -265,7 +265,8 @@ export default {
     fileOpenFailed: 'File open failed',
     defaultFileName: 'Mind map',
     creatingTip: 'Creating file',
-    directory: 'Directory'
+    directory: 'Directory',
+    login: 'Login'
   },
   edit: {
     newFeatureNoticeTitle: 'New feature reminder',

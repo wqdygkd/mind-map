@@ -261,7 +261,8 @@ export default {
     fileOpenFailed: '文件打开失败',
     defaultFileName: '思维导图',
     creatingTip: '正在创建文件',
-    directory: '目录'
+    directory: '目录',
+    login: '登录'
   },
   edit: {
     newFeatureNoticeTitle: '新特性提醒',

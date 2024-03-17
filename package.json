@@ -1,0 +1,14 @@
+{
+  "name": "mind-map",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "clean": "pnpx rimraf node_modules",
+    "clean:all": "pnpm clean && pnpm -r --parallel clean",
+    "up": "pnpm update -i -r --latest"
+  },
+  "author": "c",
+  "license": "MIT"
+}

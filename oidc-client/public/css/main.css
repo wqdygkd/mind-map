@@ -1,0 +1,17 @@
+h3.title {
+  margin-top: 1em;
+}
+
+table {
+  width: 100%;
+}
+tr {
+  border-bottom: 1px solid #ddd;
+}
+th, td {
+  padding-top: 15px;
+  text-align: left;
+}
+th {
+  width: 30%;
+}

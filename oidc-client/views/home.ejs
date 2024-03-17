@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/bulma.min.css" />
+    <link rel="stylesheet" href="/css/bulma-tooltip.min.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <title>OpenID Connect Client Demo</title>
+</head>
+
+<body>
+
+<div class="container has-text-centered">
+
+  <% if (locals.user) { %>
+
+  <h1 class="title has-text-grey">User Data</h1>
+  <table>
+    <tr><th>Technical UID</th> <td><%- locals.user.uid %></td></tr>
+    <tr><th>Login</th> <td><%- locals.user.login %></td></tr>
+    <tr><th>Name</th> <td><%- locals.user.lastName %></td></tr>
+    <tr><th>Given names</th> <td><%- locals.user.firstNames %></td></tr>
+    <tr><th>Birthdate</th> <td><%- locals.user.birthDate %></td></tr>
+    <tr><th>Email address</th> <td><%- locals.user.email %></td></tr>
+    <tr><th>Phone Number</th> <td><%- locals.user.phone %></td></tr>
+    <tr><th>Address</th> <td><%- locals.user.address %></td></tr>
+    <tr><th>Postal code</th> <td><%- locals.user.postalCode %></td></tr>
+    <tr><th>City</th> <td><%- locals.user.city %></td></tr>
+    <tr><th>Country </th> <td><%- locals.user.country %></td></tr>
+  </table>
+
+  <% } else { %>
+
+  <div class="column is-4 is-offset-4">
+    <h3 class="title has-text-grey">Local Authentication</h3>
+    <form action="/login" method="post">
+      <div class="box">
+        <div class="field" title="login/password local Authentication">
+          <div class="control">
+            <input class="input is-medium" name="login" type="text" placeholder="Login">
+          </div>
+        </div>
+        <div class="field">
+          <div class="control">
+            <input class="input is-medium" name="password" type="password" placeholder="Password">
+          </div>
+        </div>
+        <button class="button is-block is-info is-medium is-fullwidth">Login</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="column is-4 is-offset-4">
+    <h3 class="title has-text-grey">OpenID Connect</h3>
+    <form action="/login-authorize" method="post">
+        <div data-role="login-authorize" class="field" title="OpenID Connect Authentication">
+            <input type="image" src="/img/openid.png" alt="Soumettre"/>
+        </div>
+    </form>
+  </div>
+
+  <% } %>
+
+</div>
+
+<% if (locals.user) { %>
+<div class="container">
+    <p class="has-text-centered">
+        <a href="/logout" class="button is-large is-link">Logout</a>
+    </p>
+</div>
+<% } %>
+
+</body>
+</html>

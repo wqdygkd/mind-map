@@ -26,15 +26,15 @@ handleRouterList()
 const createTypeRouterList = (type, redirectPath) => {
   return [
     ...routerList.map((item) => {
-      return { 
-        path: `/${type}/${item.lang}/`, 
+      return {
+        path: `/${type}/${item.lang}/`,
         redirect: `/${type}/${item.lang}/${redirectPath}/`
       }
     }),
     ...routerList.map((item) => {
-      return { 
-        path: `/${type}/${item.lang}/`, 
-        component: DocPage, 
+      return {
+        path: `/${type}/${item.lang}/`,
+        component: DocPage,
         children: item.children.map((child) => {
           return {
             path: `${child.path}/:h?`,
@@ -50,14 +50,19 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: '/index', 
-    name: 'Index', 
+    path: '/index',
+    name: 'Index',
     component: () => import(`./pages/Index/Index.vue`)
   },
-  { 
-    path: '/', 
-    name: 'Edit', 
-    component: () => import(`./pages/Edit/Index.vue`) 
+  {
+    path: '/',
+    name: 'Edit',
+    component: () => import(`./pages/Edit/Index.vue`)
+  },
+  {
+    path: '/oidc.callback',
+    name: 'LoginCallback',
+    component: () => import(`./pages/Login/callback.vue`)
   },
   // 开发文档
   ...createTypeRouterList('doc', 'introduction'),
@@ -66,7 +71,8 @@ const routes = [
 ]
 
 const router = new VueRouter({
-  routes
+  routes,
+  mode: 'history'
 })
 
 export default router
