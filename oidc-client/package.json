@@ -2,6 +2,7 @@
   "name": "oidc-client-tutorial",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "start": "nodemon ./app.js"
   },
@@ -14,10 +15,12 @@
     "http-proxy": "^1.18.1",
     "jsonwebtoken": "^9.0.2",
     "node-csv-query": "^0.1.0",
+    "openid-client": "^5.6.5",
     "passport": "^0.7.0",
     "passport-jwt": "^4.0.1",
     "passport-oauth2": "^1.8.0",
     "passport-openidconnect": "^0.1.2",
+    "passport-zitadel": "^1.1.7",
     "regex-not": "^1.0.2",
     "repeat-string": "^1.6.1",
     "safe-regex": "^2.1.1",

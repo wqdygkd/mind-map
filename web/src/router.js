@@ -59,11 +59,6 @@ const routes = [
     name: 'Edit',
     component: () => import(`./pages/Edit/Index.vue`)
   },
-  {
-    path: '/oidc.callback',
-    name: 'LoginCallback',
-    component: () => import(`./pages/Login/callback.vue`)
-  },
   // 开发文档
   ...createTypeRouterList('doc', 'introduction'),
   // 帮助文档

@@ -34,6 +34,9 @@ importers:
       node-csv-query:
         specifier: ^0.1.0
         version: 0.1.0
+      openid-client:
+        specifier: ^5.6.5
+        version: 5.6.5
       passport:
         specifier: ^0.7.0
         version: 0.7.0
@@ -46,6 +49,9 @@ importers:
       passport-openidconnect:
         specifier: ^0.1.2
         version: 0.1.2
+      passport-zitadel:
+        specifier: ^1.1.7
+        version: 1.1.7
       regex-not:
         specifier: ^1.0.2
         version: 1.0.2
@@ -62,76 +68,6 @@ importers:
       nodemon:
         specifier: ^1.19.3
         version: 1.19.4
-
-  oidc-sample-client:
-    dependencies:
-      async-request:
-        specifier: ^1.2.0
-        version: 1.2.0
-      body-parser:
-        specifier: ^1.20.2
-        version: 1.20.2(supports-color@6.1.0)
-      cors:
-        specifier: ^2.8.5
-        version: 2.8.5
-      ejs:
-        specifier: ^2.6.1
-        version: 2.7.4
-      express:
-        specifier: ^4.18.3
-        version: 4.18.3(supports-color@6.1.0)
-      express-session:
-        specifier: ^1.18.0
-        version: 1.18.0
-      got:
-        specifier: ^14.2.1
-        version: 14.2.1
-      http-proxy:
-        specifier: ^1.18.1
-        version: 1.18.1(debug@4.3.4)
-      jsonwebtoken:
-        specifier: ^9.0.2
-        version: 9.0.2
-      node-csv-query:
-        specifier: ^0.1.0
-        version: 0.1.0
-      passport:
-        specifier: ^0.7.0
-        version: 0.7.0
-      passport-jwt:
-        specifier: ^4.0.1
-        version: 4.0.1
-      passport-openidconnect:
-        specifier: ^0.1.2
-        version: 0.1.2
-      regex-not:
-        specifier: ^1.0.2
-        version: 1.0.2
-      repeat-string:
-        specifier: ^1.6.1
-        version: 1.6.1
-      safe-regex:
-        specifier: ^2.1.1
-        version: 2.1.1
-      sessionstore:
-        specifier: ^1.3.3
-        version: 1.3.7
-    devDependencies:
-      nodemon:
-        specifier: ^1.19.3
-        version: 1.19.4
-
-  server:
-    dependencies:
-      express-jwt:
-        specifier: ^8.4.1
-        version: 8.4.1
-      jsonwebtoken:
-        specifier: ^9.0.2
-        version: 9.0.2
-      openid-client:
-        specifier: ^5.6.5
-        version: 5.6.5
 
   simple-mind-map:
     dependencies:
@@ -2042,12 +1978,6 @@ packages:
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
     dev: true
 
-  /@types/jsonwebtoken@9.0.6:
-    resolution: {integrity: sha512-/5hndP5dCjloafCXns6SZyESp3Ldq7YjH3zwzwczYnjxIT0Fqzk5ROSYVGfFyczIue7IUEj8hkvLbPoLQ18vQw==}
-    dependencies:
-      '@types/node': 20.11.28
-    dev: false
-
   /@types/keyv@3.1.4:
     resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
     dependencies:
@@ -2084,6 +2014,7 @@ packages:
     resolution: {integrity: sha512-M/GPWVS2wLkSkNHVeLkrF2fD5Lx5UC4PxA0uZcKc6QqbIQUJyW1jVjueJYi1z8n0I5PxYrtpnPnWglE+y9A0KA==}
     dependencies:
       undici-types: 5.26.5
+    dev: true
 
   /@types/normalize-package-data@2.4.4:
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -4453,14 +4384,6 @@ packages:
   /core-util-is@1.0.3:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
 
-  /cors@2.8.5:
-    resolution: {integrity: sha512-KIHbLJqu73RGr/hnbrO9uBeixNGuvSQjul/jdFvS/KFSIH1hWVd1ng7zOHx+YrEfInLG7q4n6GHQ9cDtxv/P6g==}
-    engines: {node: '>= 0.10'}
-    dependencies:
-      object-assign: 4.1.1
-      vary: 1.1.2
-    dev: false
-
   /cosmiconfig@5.2.1:
     resolution: {integrity: sha512-H65gsXo1SKjf8zmrJ67eJk8aIRKV5ff2D4uKZIBZShbhGSpEmsQOPW/SKMKYhSTrqR7ufy6RP69rPogdaPh/kA==}
     engines: {node: '>=4'}
@@ -5130,6 +5053,7 @@ packages:
     resolution: {integrity: sha512-7vmuyh5+kuUyJKePhQfRQBhXV5Ce+RnaeeQArKu1EAMpL3WbgMt5WG6uQZpEVvYSSsxMXRKOewtDk9RaTKXRlA==}
     engines: {node: '>=0.10.0'}
     requiresBuild: true
+    dev: true
 
   /electron-to-chromium@1.4.707:
     resolution: {integrity: sha512-qRq74Mo7ChePOU6GHdfAJ0NREXU8vQTlVlfWz3wNygFay6xrd/fY2J7oGHwrhFeU30OVctGLdTh/FcnokTWpng==}
@@ -5710,15 +5634,6 @@ packages:
       - supports-color
     dev: true
 
-  /express-jwt@8.4.1:
-    resolution: {integrity: sha512-IZoZiDv2yZJAb3QrbaSATVtTCYT11OcqgFGoTN4iKVyN6NBkBkhtVIixww5fmakF0Upt5HfOxJuS6ZmJVeOtTQ==}
-    engines: {node: '>= 8.0.0'}
-    dependencies:
-      '@types/jsonwebtoken': 9.0.6
-      express-unless: 2.1.3
-      jsonwebtoken: 9.0.2
-    dev: false
-
   /express-session@1.18.0:
     resolution: {integrity: sha512-m93QLWr0ju+rOwApSsyso838LQwgfs44QtOP/WBiwtAgPIo/SAh1a5c6nn2BR6mFNZehTpqKDESzP+fRHVbxwQ==}
     engines: {node: '>= 0.8.0'}
@@ -5733,10 +5648,6 @@ packages:
       uid-safe: 2.1.5
     transitivePeerDependencies:
       - supports-color
-    dev: false
-
-  /express-unless@2.1.3:
-    resolution: {integrity: sha512-wj4tLMyCVYuIIKHGt0FhCtIViBcwzWejX0EjNxveAa6dG+0XBCQhMbx+PnkLkFCxLC69qoFrxds4pIyL88inaQ==}
     dev: false
 
   /express@4.18.3(supports-color@6.1.0):
@@ -7314,6 +7225,10 @@ packages:
     resolution: {integrity: sha512-jc7BFxgKPKi94uOvEmzlSWFFe2+vASyXaKUpdQKatWAESU2MWjDfFf0fdfc83CDKcA5QecabZeNLyfhe3yKNkg==}
     dev: false
 
+  /jose@5.2.3:
+    resolution: {integrity: sha512-KUXdbctm1uHVL8BYhnyHkgp3zDX5KW8ZhAKVFEfUbU2P8Alpzjb+48hHvjOdQIyPshoblhzsuqOwEEAbtHVirA==}
+    dev: false
+
   /js-message@1.0.7:
     resolution: {integrity: sha512-efJLHhLjIyKRewNS9EGZ4UpI8NguuL6fKkhRxVuMmrGV2xN/0APGdQYwLFky5w9naebSZ0OwAGp0G6/2Cg90rA==}
     engines: {node: '>=0.6.0'}
@@ -8468,6 +8383,12 @@ packages:
     resolution: {integrity: sha512-y10wOWt8yZpqXmOgRo77WaHEmhYQYGNA6y421PKsKYWEK8aW+cqAphborZDhqfyKrbZEN92CN1X2KbafY2s7Yw==}
     dev: true
 
+  /node-rsa@1.1.1:
+    resolution: {integrity: sha512-Jd4cvbJMryN21r5HgxQOpMEqv+ooke/korixNNK3mGqfGJmy0M77WDDzo/05969+OkMy3XW1UuZsSmW9KQm7Fw==}
+    dependencies:
+      asn1: 0.2.6
+    dev: false
+
   /nodemon@1.19.4:
     resolution: {integrity: sha512-VGPaqQBNk193lrJFotBU8nvWZPqEZY2eIzymy2jjY0fJ9qIsxA0sxQ8ATPl0gZC645gijYEc1jtZvpS8QWzJGQ==}
     engines: {node: '>=4'}
@@ -8974,6 +8895,18 @@ packages:
   /passport-strategy@1.0.0:
     resolution: {integrity: sha512-CB97UUvDKJde2V0KDWWB3lyf6PC3FaZP7YxZ2G8OAtn9p4HI9j9JLP9qjOGZFvyl8uwNT8qM+hGnz/n16NI7oA==}
     engines: {node: '>= 0.4.0'}
+    dev: false
+
+  /passport-zitadel@1.1.7:
+    resolution: {integrity: sha512-oNjKGpsgKxz4eJ5LAuf6mjAza7VL+hpB22cU1TfbRTHT9nHW4lokW0E7rIsptgRC/u5vZirF5uj3E/ATO01FrQ==}
+    dependencies:
+      axios: 1.6.8
+      jose: 5.2.3
+      node-rsa: 1.1.1
+      openid-client: 5.6.5
+      passport: 0.7.0
+    transitivePeerDependencies:
+      - debug
     dev: false
 
   /passport@0.7.0:
@@ -11299,6 +11232,7 @@ packages:
 
   /undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
+    dev: true
 
   /unicode-canonical-property-names-ecmascript@2.0.0:
     resolution: {integrity: sha512-yY5PpDlfVIU5+y/BSCxAJRBIS1Zc2dDG3Ujq+sR0U+JjUevW2JhocOF+soROYDSaAezOzOKuyyixhD6mBknSmQ==}

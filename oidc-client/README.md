@@ -11,8 +11,8 @@ OpenID Connect service provider in NodeJS
 * [List of certified OpenID Connect libraries](https://openid.net/developers/certified/)
 * [Space delimited list of keywords](https://openid.net/specs/openid-connect-core-1_0.html#ScopeClaims)
 
-
 https://www.passportjs.org/packages/openid-client/
 
 https://github.com/buehler/node-passport-zitadel/tree/main
 https://openid.net/specs/oauth-v2-jarm.html
+https://openid.net/specs/openid-connect-core-1_0.html#IDTokenValidation
