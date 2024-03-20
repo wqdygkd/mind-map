@@ -1,14 +1,23 @@
 {
   "name": "mind-map",
   "version": "1.0.0",
+  "packageManager": "pnpm@8.15.5",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "clean": "pnpx rimraf node_modules",
     "clean:all": "pnpm clean && pnpm -r --parallel clean",
-    "up": "pnpm update -i -r --latest"
+    "up": "pnpm update -i -r --latest",
+    "start": "nodemon ./save2github/app.js"
+  },
+  "engines": {
+    "node": ">=20"
   },
   "author": "c",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "dotenv": "^16.4.5",
+    "nodemon": "^3.1.0"
+  }
 }

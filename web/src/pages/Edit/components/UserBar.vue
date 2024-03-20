@@ -14,7 +14,7 @@ export default {
   },
   methods: {
     async login() {
-      location.href = '/auth/oidc'
+      location.href = '/oauth/github'
     }
   }
 }
